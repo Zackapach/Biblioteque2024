@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+<div>
+    {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+    <h2>
+        {% if author is defined %}
+            Mise à jour de l'auteur {{ form.name.vars.value }} {{ form.firstName.vars.value }}
+        {% else %}
+            Nouvel auteur
+        {% endif %}
+    </h2>
+
+    <div>
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+        {{ form_errors(form.name) }}
+    </div>
+
+    <div>
+        {{ form_label(form.firstName) }}
+        {{ form_widget(form.firstName) }}
+        {{ form_errors(form.firstName) }}
+    </div>
+
+    <div>
+        {{ form_label(form.dateOfBirth) }}
+        {{ form_widget(form.dateOfBirth) }}
+        {{ form_errors(form.dateOfBirth) }}
+    </div>
+
+    <div>
+        {{ form_label(form.dateCreationAuthor) }}
+        {{ form_widget(form.dateCreationAuthor) }}
+        {{ form_errors(form.dateCreationAuthor) }}
+    </div>
+
+    <div>
+        {{ form_label(form.dateModificationAuthor) }}
+        {{ form_widget(form.dateModificationAuthor) }}
+        {{ form_errors(form.dateModificationAuthor) }}
+    </div>
+
+    <div>
+        {{ form_label(form.user) }}
+        {{ form_widget(form.user) }}
+        {{ form_errors(form.user) }}
+    </div>
+
+    <div>
+        {{ form_label(form.book) }}
+        {{ form_widget(form.book) }}
+        {{ form_errors(form.book) }}
+    </div>
+
+    <button type="submit">Enregistrer</button>
+
+    {{ form_end(form) }}
+</div>
